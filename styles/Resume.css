@@ -1,0 +1,80 @@
+.resume-section {
+    padding: 100px 20px;
+    background-color:#071E49;
+    color: white;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #00bfff;
+  }
+  
+  .resume-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .resume-tab {
+    background: none;
+    border: 2px solid #00bfff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .resume-tab.active,
+  .resume-tab:hover {
+    background-color: #00bfff;
+    color: #081828;
+  }
+  
+  .resume-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .resume-card {
+    border-left: 4px solid #00bfff;
+    padding: 20px;
+    background-color: #0b2239;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .resume-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .resume-card-subtitle {
+    font-size: 16px;
+    color: #aaa;
+    margin-top: 5px;
+  }
+  
+  .resume-card-date {
+    font-size: 14px;
+    color: #00bfff;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .resume-card-description {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #ccc;
+  }
+  
+  

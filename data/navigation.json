@@ -1,0 +1,13 @@
+{
+    "logo": "<VICKY/>",
+    "menu": [
+      { "id": 1, "label": "Home", "link": "#Hero" },
+    
+    
+      { "id": 4, "label": "Resume", "link": "#ResumeSection" },
+      { "id": 5, "label": "Portfolio", "link": "#projectsSection" },
+    
+      { "id": 7, "label": "Contact", "link": "#ContactSection" }
+    ]
+  }
+  

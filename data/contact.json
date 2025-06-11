@@ -1,0 +1,61 @@
+{
+    "contactInfo": {
+      "email": {
+        "label": "Mail Us",
+        "value": "victoriadufatanye99@gmail.com",
+        "icon": "FaEnvelope"
+      },
+      "phone": {
+        "label": "Contact Us",
+        "value": "+250 794469581",
+        "icon": "FaPhoneAlt"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Rwanda,Kigali",
+        "icon": "FaMapMarkerAlt"
+      }
+    },
+    "socials": [
+      {
+        "name": "Facebook",
+        "icon": "FaFacebookF",
+        "url": "https://web.facebook.com/dufatanye.victoria"
+      },
+      {
+        "name": "GitHub",
+        "icon": "FaGithub",
+        "url": "https://github.com/Victoriaviv?tab=repositories"
+      },
+      {
+        "name": "linkedIn",
+        "icon": "FaLinkedinIn",
+        "url": "https://www.linkedin.com/in/dufatanye-victoria-5a7842336/"
+      }
+    ],
+    "formFields": [
+      {
+        "name": "firstName",
+        "placeholder": "Your Name",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "placeholder": "Your Email",
+        "type": "email"
+      },
+      {
+        "name": "subject",
+        "placeholder": "Your Subject",
+        "type": "text"
+      },
+      {
+        "name": "message",
+        "placeholder": "Send Message",
+        "type": "textarea"
+      }
+    ],
+    "buttonText": "Submit Now",
+    "title": "Let’s Work Together."
+  }
+  

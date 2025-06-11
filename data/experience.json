@@ -1,0 +1,39 @@
+{
+    "tabs": ["Education", "Skills", "Experience"],
+    "content": {
+      "Education": [
+        {
+          "title": "High School Diploma (PCM)",
+          "subtitle": "Ecole Secondaire St. Vincent Muhoza",
+          "date": "2021 - 2024",
+          "description": "Graduated with a concentration in Physics, Chemistry, and Mathematics."
+        }
+      ],
+      "Skills": [
+        {
+          "title": "Frontend Development",
+          "subtitle": "HTML, CSS, JavaScript, React",
+          "description": "Building responsive and interactive user interfaces."
+        },
+        {
+          "title": "Backend Development",
+          "subtitle": "Node.js, Express, MongoDB, PostgreSQL, TypeScript",
+          "description": "Creating APIs, handling data, and developing full-stack apps."
+        }
+      ],
+      "Experience": [
+        {
+          "title": "Training Program - TekHer Initiative",
+          "subtitle": "January 2025 – Present",
+          "description": "Hands-on training in full-stack web development, including real project work and mentorship."
+        },
+        {
+          "title": "Women Coding Bootcamp",
+          "subtitle": "Amalitech",
+          "date": "1 Week (2024)",
+          "description": "Participated in a fast-paced bootcamp focused on empowering women in tech through coding fundamentals and teamwork."
+        }
+      ]
+    }
+  }
+  

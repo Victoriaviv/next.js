@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome To Dreamer",
+  "name": "Victoria",
+  "surname": "DUFATANYE",
+  "title": "Web Developer",
+  "description": "I’m a passionate developer who transforms ideas into interactive experiences, blending logic with creativity to deliver digital solutions that matter.",
+  "ctaText": "More About Me",
+
+  "socials": [
+    { "icon": "facebook", "link": "https://web.facebook.com/dufatanye.victoria" },
+    { "icon": "linkedin", "link": "https://www.linkedin.com/in/dufatanye-victoria-5a7842336/" },
+    { "icon": "twitter", "link": "https://x.com/victoria74102" }
+  ],
+  "image":"profile.png"
+}

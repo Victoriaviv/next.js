@@ -1,0 +1,180 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    margin-top: 2rem;
+    background: linear-gradient(135deg,#071E49, #1b263b);
+    color: white;
+    flex-wrap: wrap;
+  }
+  
+  .hero-left {
+    flex: 1;
+    padding-right: 40px;
+    min-width: 300px;
+  }
+  
+  .hero-welcome {
+    font-size: 0.9rem;
+    color: #58a6ff;
+    margin-bottom: 10px;
+  }
+  
+  .hero-heading {
+    font-size: 3rem;
+    margin: 10px 0;
+  }
+  
+  .hero-heading .highlight {
+    color: #58a6ff;
+  }
+  
+  .hero-title {
+    font-size: 2.5em;
+    margin: 5px 0 20px;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #cccccc;
+    margin-bottom: 30px;
+    max-width: 500px;
+  }
+  
+  .btn {
+    background-color: #112240;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-right: 20px;
+    display: inline-block;
+  }
+  
+  .btn:hover {
+    background-color: #58a6ff;
+  }
+  
+  .social-icons {
+    display: inline-flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    background-color: #1e2a3a;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    background-color: #58a6ff;
+  }
+  
+  .hero-right {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+  }
+  
+  .image-container {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #58a6ff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .profile-img {
+    width: 300px;
+    border-radius: 8px;
+  }
+  
+  .tag {
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    background-color: #001f3f;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    transform: rotate(-15deg);
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column-reverse;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  
+    .hero-left,
+    .hero-right {
+      padding: 0;
+      min-width: 100%;
+    }
+  
+    .hero-heading {
+      font-size: 2rem;
+    }
+  
+    .hero-title {
+      font-size: 1.2rem;
+    }
+  
+    .hero-description {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+  
+    .btn {
+      margin: 10px 10px;
+      padding: 10px 16px;
+    }
+  
+    .social-icons {
+      justify-content: center;
+      margin-top: 20px;
+    }
+  
+    .profile-img {
+      width: 220px;
+    }
+  
+    .tag {
+      font-size: 0.7rem;
+      top: -15px;
+      right: -25px;
+      padding: 4px 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-heading {
+      font-size: 1.8rem;
+    }
+  
+    .hero-title {
+      font-size: 1rem;
+    }
+  
+    .profile-img {
+      width: 180px;
+    }
+  
+    .tag {
+      font-size: 0.65rem;
+      top: -10px;
+      right: -15px;
+    }
+  }
+  

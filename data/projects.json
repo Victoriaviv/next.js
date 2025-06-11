@@ -1,0 +1,32 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Recycling and Waste Management Platform",
+            "description": "An educational platform dedicated to teaching people about the importance of protecting our environment through recycling. It provides practical tips, guides, and resources to encourage sustainable waste management practices.",
+            "technologies": ["React", "CSS", "JavaScript","Node.js"],
+            "liveUrl": "https://recycling-seven.vercel.app",
+            "githubUrl": "https://github.com/Victoriaviv/Recycling",
+            "image": "background.jpg"
+          },
+      {
+        "id": 2,
+        "title": "RECA (Rwanda Conservation Environment Agency)",
+        "description": "RECA is dedicated to climate innovation, environmental conservation, and youth empowerment in Rwanda. It integrates technology for real-time environmental monitoring, promotes community-led ecosystem restoration, and advances education-driven initiatives aligned with the Sustainable Development Goals (SDGs).",
+        "technologies": ["React", "CSS", "JavaScript", "Node.js"],
+        "liveUrl": "https://reca-rosy.vercel.app/",
+        "githubUrl": "https://github.com/Victoriaviv/RECA",
+        "image": "reca.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Blog API",
+        "description": "A backend RESTful API for managing blog posts and users.",
+        "technologies": ["Node.js", "Express", "PostgreSQL"],
+        "liveUrl": "",
+        "githubUrl": "https://github.com/Victoriaviv/type",
+        "image": "api.png"
+      }
+    ]
+  }
+  
