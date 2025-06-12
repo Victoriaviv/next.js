@@ -1,0 +1,240 @@
+/* Container for the whole posts section */
+.post-table-container{
+    padding: 30px;
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  margin: 90px auto;
+  width: 60%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+
+}
+.post-form-container {
+  padding: 30px;
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  margin: 20px auto;
+  width: 900px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* ===== Post Table Styles ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 12px rgb(0 0 0 / 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-table th,
+.post-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.post-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #555;
+}
+
+.post-table tr:hover {
+  background-color: #f1f7ff;
+  cursor: pointer;
+}
+
+.status.published {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status.draft {
+  color: #ff9f00;
+  font-weight: 600;
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons style */
+.action-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+}
+
+/* ===== Post Form Styles ===== */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.post-form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.post-form input,
+.post-form select,
+.post-form textarea {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.post-form input:focus,
+.post-form select:focus,
+.post-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  background-color: #007bff;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Header with title + create button */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .create-btn {
+    background: #28a745;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .create-btn:hover {
+    background: #218838;
+  }
+  
+  /* New Comments manage link */
+  .manage-comments {
+    margin-left: 8px;
+    font-size: 0.85rem;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  .manage-comments:hover {
+    color: #0056b3;
+  }
+  
+  /* Like button styling */
+  .like-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #e0245e;
+    transition: transform 0.1s;
+  }
+  .like-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Adjust Actions column so it doesn’t stretch */
+  .post-table th:nth-child(7),
+  .post-table td:nth-child(7) {
+    width: 180px;
+  }
+  
+
+/* ===== Responsive for smaller screens ===== */
+@media (max-width: 700px) {
+  .filters {
+    flex-direction: column;
+  }
+  
+  .filters input,
+  .filters select {
+    min-width: 100%;
+  }
+
+  .post-table th,
+  .post-table td {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+}

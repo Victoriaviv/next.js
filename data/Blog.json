@@ -1,0 +1,69 @@
+[
+  
+    {
+      "id": "1",
+      "slug": "easiest-materials-to-recycle",
+      "title": "What Are The Easiest Materials to Recycle?",
+      "date": "25 Feb",
+      "image": "/blog1.jpg",
+      "description": "Learn what materials are most recyclable and why it matters."
+    },
+    {
+      "id": "2",
+      "slug": "plastic-waste-producers-july",
+      "title": "Plastic Free July: Who produces the most plastic waste?",
+      "date": "07 Mar",
+      "image": "/blog2.jpg",
+      "description": "Explore the impact of plastic waste during Plastic Free July."
+    },
+    {
+      "id": "3",
+      "slug": "recycling-tips-2025",
+      "title": "What Are The Easiest Materials to Recycle?",
+      "date": "25 Feb",
+      "image": "/blog3.jpg",
+      "description": "Learn what materials are most recyclable and why it matters."
+    },
+    {
+      "id": "4",
+      "slug": "plastic-waste-impact",
+      "title": "Plastic Free July: Who produces the most plastic waste?",
+      "date": "07 Mar",
+      "image": "/blog4.jpg",
+      "description": "Explore the impact of plastic waste during Plastic Free July."
+    },
+    {
+      "id": "5",
+      "slug": "how-to-recycle-better",
+      "title": "What Are The Easiest Materials to Recycle?",
+      "date": "25 Feb",
+      "image": "/blog5.jpg",
+      "description": "Learn what materials are most recyclable and why it matters."
+    },
+    {
+      "id": "6",
+      "slug": "global-plastic-crisis",
+      "title": "Plastic Free July: Who produces the most plastic waste?",
+      "date": "07 Mar",
+      "image": "/blog6.jpg",
+      "description": "Explore the impact of plastic waste during Plastic Free July."
+    },
+  
+      {
+        "id": "7",
+        "slug": "recycling-easy-materials",
+        "title": "Plastic Free July: Who produces the most plastic waste?",
+        "date": "07 Mar",
+        "image": "/metal.jpg",
+        "description": "Explore the impact of plastic waste during Plastic Free July."
+      },
+      {
+        "id": "8",
+        "slug": "plastic-waste-blog7",
+        "title": "Plastic Free July: Who produces the most plastic waste?",
+        "date": "07 Mar",
+        "image": "/blog7.jpg",
+        "description": "Explore the impact of plastic waste during Plastic Free July."
+      }
+  ]
+  

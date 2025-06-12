@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import navData from "../data/navigation.json";
+
 import "../styles/Navbar.css";
 import { FiMenu, FiX } from "react-icons/fi"; 
 
@@ -33,7 +34,7 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav className={`navbare ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="logo">{navData.logo}</div>
         <div className="menu-toggle" onClick={toggleMenu}>
@@ -50,7 +51,9 @@ const Navbar = () => {
                 {item.label}
               </a>
             </li>
+            
           ))}
+       
         </ul>
       </div>
     </nav>

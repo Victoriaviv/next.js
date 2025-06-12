@@ -1,13 +1,18 @@
 'use client';
-import React from 'react';
-// import './DashboardNavbar.css';
 
-const DashboardNavbar = () => {
+import React from 'react';
+import "../styles/dashboardnav.css";
+
+const DashboardNav = () => {
   return (
-    <nav className="dashboard-navbar">
-      <h1 className="logo">My Portfolio Dashboard</h1>
-    </nav>
+    <div className="navbar">
+      <div className="logo">My Dashboard</div>
+      <div className="nav-actions">
+        <button>Notifications</button>
+        <button>Profile</button>
+      </div>
+    </div>
   );
 };
 
-export default DashboardNavbar;
+export default DashboardNav;

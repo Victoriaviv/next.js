@@ -40,7 +40,9 @@ const Hero = () => {
         </div>
       </div>
     </section>
+    
     </section>
+    
   );
 };
 
