@@ -34,7 +34,7 @@
   .blog-content h3 {
     margin: 0;
     font-size: 1.2rem;
-    color: #333;
+    color: black;
   }
   
   .blog-content p {
@@ -62,6 +62,14 @@
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .blog-detail h2{
+    color: rgb(48, 44, 44);
+    margin-bottom: 2rem;
+  }
+  .blog-detail p{
+    color: rgb(48, 44, 44);
+    margin-bottom: 2rem;
   }
   
   .blog-detail img {

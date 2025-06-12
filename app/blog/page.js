@@ -1,3 +1,4 @@
+// app/blog/page.js
 import Link from 'next/link';
 import BlogData from 'data/Blog.json';
 import 'styles/blog.css';
@@ -6,7 +7,7 @@ export default function BlogPage() {
   return (
     <div className="blog-container">
       {BlogData.map((blog) => (
-        <Link key={blog.id} href={`/blog/${blog.slug}`}>
+        <Link key={blog.id} href={`/blog/${blog.slug}`} className="blog-link">
           <div className="blog-card">
             <img className="blog-img" src={blog.image} alt={blog.title} />
             <div className="blog-content">
