@@ -2,7 +2,7 @@
 import React, { useState } from"react";
 import {FaEnvelope,FaPhoneAlt,FaMapMarkerAlt,FaFacebookF,FaGithub,FaLinkedinIn} from "react-icons/fa";
 
-import contactData from "../data/contact.json"; // your JSON with contactInfo, socials, etc
+import contactData from "../data/contact.json"; 
 import "../styles/contact.css";
 
 const iconMap = {

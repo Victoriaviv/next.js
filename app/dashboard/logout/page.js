@@ -7,14 +7,14 @@ export default function LogoutPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // ✅ Clear localStorage items
+   
     localStorage.removeItem('userToken');
     localStorage.removeItem('user');
 
-    // ✅ Optionally, show a small delay before redirect
+  
     setTimeout(() => {
       router.push('/');
-    }, 500); // adjust delay if needed
+    }, 500); 
   }, [router]);
 
   return <p>You have been logged out successfully...</p>;

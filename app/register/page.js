@@ -5,7 +5,7 @@ import Register from "Components/Register";
 import Login from "Components/Login";
 
 const RegisterPage = () => {
-  const [showLogin, setShowLogin] = useState(false); // false means show Register first
+  const [showLogin, setShowLogin] = useState(false); 
 
   return (
     <div>

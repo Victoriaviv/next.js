@@ -1,4 +1,4 @@
-// Components/AuthGuard.jsx
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -11,14 +11,14 @@ const AuthGuard = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("userToken");
     if (!token) {
-      router.push("/login"); // redirect to login if no token found
+      router.push("/login"); 
     } else {
-      setIsLoading(false); // token found, stop loading
+      setIsLoading(false); 
     }
   }, [router]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // or a spinner component
+    return <div>Loading...</div>; 
   }
 
   return <>{children}</>;

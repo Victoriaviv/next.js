@@ -51,7 +51,7 @@
 }
 .button{
     width: 20rem;
-    background-color:#47893A;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     font-size: 20px;
@@ -62,7 +62,7 @@
     
 }
 .button:hover{
-    background-color:green;
+    background-color:#00bfff;
 }
 .forms input{
     background-color:white;

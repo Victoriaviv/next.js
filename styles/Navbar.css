@@ -44,7 +44,7 @@
   .menu li a:hover {
     color: #00bfff;
   }
-  /* Navbar.css */
+
 
 html {
     scroll-behavior: smooth;
@@ -59,7 +59,7 @@ html {
   }
   
   .menu a.active {
-    border-bottom: 2px solid #c084fc; /* Underline color for active link */
+    border-bottom: 2px solid #c084fc;
     font-weight: bold;
   }
   

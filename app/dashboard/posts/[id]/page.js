@@ -3,11 +3,13 @@
 import React from 'react';
 import PostForm from 'Components/PostForm';
 
-export default function CreatePostPage() {
+export default function EditPostPage({ params }) {
+  const { id } = params;
+
   return (
     <div style={{ padding: '24px' }}>
-      <h1>Create a New Post</h1>
-      <PostForm />
+      <h1>Edit Post</h1>
+      <PostForm postId={id} />
     </div>
   );
 }

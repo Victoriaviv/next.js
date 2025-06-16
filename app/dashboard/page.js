@@ -1,47 +1,33 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from "react";
-import Login from "Components/Login";
-import Register from "Components/Register";
+import { useRouter } from "next/navigation";
 import DashboardNav from "Components/DashboardNav";
 import DashboardSidebar from "Components/DashboardSidebar";
 
 export default function DashboardPage() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [checking, setChecking] = useState(true);
-  const [showRegister, setShowRegister] = useState(false);
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("userToken");
+
     if (token) {
-      setLoggedIn(true);
+      setIsAuth(true);
+    } else {
+      router.push("/login"); // Redirect if not authenticated
     }
-    setChecking(false);
+    setLoading(false);
   }, []);
 
-  const handleLoginSuccess = () => {
-    setLoggedIn(true);
-  };
-
-  const switchToRegister = () => setShowRegister(true);
-  const switchToLogin = () => setShowRegister(false);
-
-  if (checking) {
-    return <div>Loading...</div>;
-  }
-
-  if (!loggedIn) {
-    return showRegister ? (
-      <Register changeModal={switchToLogin} />
-    ) : (
-      <Login changeModal={handleLoginSuccess} goToRegister={switchToRegister} />
-    );
-  }
+  if (loading) return <div>Checking authentication...</div>;
+  if (!isAuth) return null;
 
   return (
     <div className="dashboard-container">
       <DashboardNav />
       <DashboardSidebar />
     </div>
-  );
+  )
 }

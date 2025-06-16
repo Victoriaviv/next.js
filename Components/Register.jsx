@@ -8,77 +8,105 @@ import { Notify } from 'notiflix';
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { IoCloseSharp } from "react-icons/io5";
-import Login from "./Login"; // Adjust path if different
+import Login from "Components/Login.jsx";
 
 const Register = ({ changeModal }) => {
-  const router = useRouter();
   const [isSignup, setIsSignup] = useState(true);
+
+  const goToLogin = () => setIsSignup(false);
+  const goToRegister = () => setIsSignup(true);
+
+  // Backend validation errors per field
+  const [backendErrors, setBackendErrors] = useState({});
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm();
 
   const onSubmit = async (data) => {
     try {
-      const { firstName, lastName, userEmail, userPassword } = data;
-
+      setBackendErrors({});
       const formData = {
-        firstName,
-        lastName,
-        userEmail,
-        userPassword,
+        name: data.name,
+        username: data.username,
+        email: data.userEmail,
+        password: data.userPassword,
       };
-
-    //   const response = await axios.post(
-    //     `https://ecohub-2.onrender.com/user/register`,
-    //     formData,
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   );
-
+      const response = await axios.post('http://localhost:5000/api/register', formData);
+  
+      // 1. Success
       Notify.success("Registration successful");
-      localStorage.setItem("userToken", JSON.stringify(response.data));
-      reset();
-      router.push("/dashboard"); // Redirect to dashboard after registration
+  
+      // 2. Store the token immediately
+      localStorage.setItem("userToken", response.data?.token);
+      localStorage.setItem("user", JSON.stringify(response.data?.user));
+  
+      // 3. Redirect to Dashboard directly
+      changeModal();
+      router.push("/login");
+  
     } catch (error) {
-      console.error(error);
-      Notify.failure("Registration failed");
+      console.error('Registration Error!', error);
+      Notify.failure(error.response?.data?.message || "Registration failed.");
+      if (error.response?.data?.errors) {
+        setBackendErrors(error.response?.data?.errors);
+      }
     }
   };
+  
+  
 
   return (
     <div className="formscontainer1">
       {isSignup ? (
-        <form className="forms1" onSubmit={handleSubmit(onSubmit)}>
+        <form className="forms1" onSubmit={handleSubmit(onSubmit)} noValidate>
           <IoCloseSharp className="iconclose" onClick={changeModal} />
           <h2>Register</h2>
 
           <input
             type="text"
-            placeholder="Enter first name"
-            {...register("firstName", { required: "First name is required" })}
+            placeholder="Name"
+            {...register("name", { required: "Name is required" })}
+            disabled={isSubmitting}
+            aria-invalid={errors.name ? "true" : "false"}
+            aria-describedby="name-error"
           />
-          {errors.firstName && <p>{errors.firstName.message}</p>}
+          {(errors.name || backendErrors.name) && (
+            <p className="error" id="name-error" aria-live="polite">
+              {errors.name?.message || backendErrors.name}
+            </p>
+          )}
 
           <input
             type="text"
-            placeholder="Enter last name"
-            {...register("lastName", { required: "Last name is required" })}
+            placeholder="Username"
+            {...register("username", { required: "Username is required" })}
+            disabled={isSubmitting}
+            aria-invalid={errors.username ? "true" : "false"}
+            aria-describedby="username-error"
           />
-          {errors.lastName && <p>{errors.lastName.message}</p>}
+          {(errors.username || backendErrors.username) && (
+            <p className="error" id="username-error" aria-live="polite">
+              {errors.username?.message || backendErrors.username}
+            </p>
+          )}
 
           <input
             type="email"
             placeholder="Enter email"
             {...register("userEmail", { required: "Email is required" })}
+            disabled={isSubmitting}
+            aria-invalid={errors.userEmail ? "true" : "false"}
+            aria-describedby="email-error"
           />
-          {errors.userEmail && <p>{errors.userEmail.message}</p>}
+          {(errors.userEmail || backendErrors.email) && (
+            <p className="error" id="email-error" aria-live="polite">
+              {errors.userEmail?.message || backendErrors.email}
+            </p>
+          )}
 
           <input
             type="password"
@@ -86,23 +114,39 @@ const Register = ({ changeModal }) => {
             {...register("userPassword", {
               required: "Password is required",
               minLength: {
-                value: 6,
-                message: "Password must be at least 6 characters",
+                value: 8,
+                message: "Password must be at least 8 characters",
               },
             })}
+            disabled={isSubmitting}
+            aria-invalid={errors.userPassword ? "true" : "false"}
+            aria-describedby="password-error"
           />
-          {errors.userPassword && <p>{errors.userPassword.message}</p>}
+          {(errors.userPassword || backendErrors.password) && (
+            <p className="error" id="password-error" aria-live="polite">
+              {errors.userPassword?.message || backendErrors.password}
+            </p>
+          )}
 
-          <button type="submit" className="button">
-            Register
+          <button type="submit" className="button" disabled={isSubmitting}>
+            {isSubmitting ? "Registering..." : "Register"}
           </button>
 
-          <p>Already have an account? </p>
-            <a onClick={changeModal}>Login here</a>
-  
+          <p>
+            Already have an account?{" "}
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                goToLogin();
+              }}
+            >
+              Login here
+            </a>
+          </p>
         </form>
       ) : (
-        <Login changeModal={changeModal} />
+        <Login changeModal={changeModal} goToRegister={goToRegister} />
       )}
     </div>
   );

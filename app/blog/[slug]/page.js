@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BlogData from "data/Blog.json";
@@ -14,11 +15,14 @@ export default function SingleBlogPage({ params }) {
 
   useEffect(() => {
     if (!blog) return;
+
+    // Fetch comments from API
     axios
       .get(`https://ecohub-2.onrender.com/comment/getCommentsByBlogId/${blog.id}`)
       .then((res) => setComments(res.data.comments.map((c) => c.text)))
       .catch(console.error);
 
+    // Random initial likes count (simulate)
     setLikes(Math.floor(Math.random() * 100));
   }, [blog?.id]);
 
@@ -26,10 +30,13 @@ export default function SingleBlogPage({ params }) {
     if (!newComment.trim()) return;
 
     try {
+      // Post new comment to API
       await axios.post("https://ecohub-2.onrender.com/comment/createComment", {
         blogId: blog.id,
         text: newComment,
       });
+
+      // Re-fetch comments after posting
       const res = await axios.get(`https://ecohub-2.onrender.com/comment/getCommentsByBlogId/${blog.id}`);
       setComments(res.data.comments.map((c) => c.text));
       setNewComment("");
@@ -47,7 +54,9 @@ export default function SingleBlogPage({ params }) {
       <p>{blog.description}</p>
 
       <div className="blog-actions">
-        <span onClick={() => setLikes(likes + 1)}>👍 Like {likes}</span>
+        <span onClick={() => setLikes(likes + 1)} style={{ cursor: "pointer" }}>
+          👍 Like {likes}
+        </span>
       </div>
 
       <div className="comment-section">
@@ -61,7 +70,9 @@ export default function SingleBlogPage({ params }) {
         <button onClick={handleComment}>Post</button>
         <div className="comments-list">
           {comments.map((c, i) => (
-            <div key={i} className="comment">{c}</div>
+            <div key={i} className="comment">
+              {c}
+            </div>
           ))}
         </div>
       </div>

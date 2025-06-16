@@ -8,28 +8,28 @@ export default function Blog({ blog }) {
   const [newComment, setNewComment] = useState("");
   const [likes, setLikes] = useState(0);
 
-  useEffect(() => {
-    axios.get(`https://ecohub-2.onrender.com/comment/getCommentsByBlogId/${blog.id}`)
-      .then(res => setComments(res.data.comments.map(c => c.text)))
-      .catch(console.error);
-    setLikes(Math.floor(Math.random() * 100));
-  }, [blog.id]);
+  // useEffect(() => {
+  //   axios.get(`https://ecohub-2.onrender.com/comment/getCommentsByBlogId/${blog.id}`)
+  //     .then(res => setComments(res.data.comments.map(c => c.text)))
+  //     .catch(console.error);
+  //   setLikes(Math.floor(Math.random() * 100));
+  // }, [blog.id]);
 
-  const handleComment = async () => {
-    if (!newComment.trim()) return;
+  // const handleComment = async () => {
+  //   if (!newComment.trim()) return;
 
-    try {
-      await axios.post("https://ecohub-2.onrender.com/comment/createComment", {
-        blogId: blog.id,
-        text: newComment
-      });
-      const res = await axios.get(`https://ecohub-2.onrender.com/comment/getCommentsByBlogId/${blog.id}`);
-      setComments(res.data.comments.map(c => c.text));
-      setNewComment("");
-    } catch (error) {
-      console.error("Comment failed", error);
-    }
-  };
+  //   try {
+  //     await axios.post("https://ecohub-2.onrender.com/comment/createComment", {
+  //       blogId: blog.id,
+  //       text: newComment
+  //     });
+  //     const res = await axios.get(`https://ecohub-2.onrender.com/comment/getCommentsByBlogId/${blog.id}`);
+  //     setComments(res.data.comments.map(c => c.text));
+  //     setNewComment("");
+  //   } catch (error) {
+  //     console.error("Comment failed", error);
+  //   }
+  // };
 
   return (
     <div className="blog-detail">

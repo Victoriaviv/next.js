@@ -1,33 +1,60 @@
 'use client';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import 'styles/post.css';
 
-const PostForm = ({ onSubmit }) => {
+const PostForm = ({ postId }) => {
+  const router = useRouter();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Tech');
   const [status, setStatus] = useState('Draft');
   const [content, setContent] = useState('');
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (postId) {
+      // Fetch existing post to edit
+      fetch(`http://localhost:5000/api/posts/${postId}`, { credentials: 'include' })
+        .then(res => res.json())
+        .then(data => {
+          setTitle(data.title || '');
+          setCategory(data.category || 'Tech');
+          setStatus(data.status || 'Draft');
+          setContent(data.content || '');
+        })
+        .catch(console.error);
+    }
+  }, [postId]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newPost = {
-      id: Date.now(),
-      title,
-      category,
-      status,
-      content,
-      date: new Date().toISOString().split('T')[0],
-    };
-    onSubmit(newPost);
-    setTitle('');
-    setCategory('Tech');
-    setStatus('Draft');
-    setContent('');
+
+    const postPayload = { title, category, status, content };
+    try {
+      const url = postId ? `http://localhost:5000/api/posts/${postId}` : 'http://localhost:5000/api/posts';
+      const method = postId ? 'PUT' : 'POST';
+
+      const res = await fetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(postPayload),
+      });
+
+      if (res.ok) {
+        alert(`Post ${postId ? 'updated' : 'created'} successfully!`);
+        router.push('/dashboard/posts');
+      } else {
+        alert('Failed to save post.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Error occurred while saving post.');
+    }
   };
 
   return (
     <div className="post-form-container">
-      {/* <h2>Create New Post</h2> */}
       <form onSubmit={handleSubmit} className="post-form">
         <label>Title</label>
         <input
@@ -60,7 +87,7 @@ const PostForm = ({ onSubmit }) => {
         />
 
         <button type="submit" className="submit-btn">
-          {status === 'Published' ? 'Publish Post' : 'Save Draft'}
+          {postId ? 'Update Post' : (status === 'Published' ? 'Publish Post' : 'Save Draft')}
         </button>
       </form>
     </div>

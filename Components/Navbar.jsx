@@ -46,7 +46,7 @@ const Navbar = () => {
               <a
                 href={item.link}
                 className={active === item.link ? "active" : ""}
-                onClick={() => setMenuOpen(false)} // close menu after click
+                onClick={() => setMenuOpen(false)} 
               >
                 {item.label}
               </a>

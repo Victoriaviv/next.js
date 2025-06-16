@@ -1,4 +1,3 @@
-// app/blog/page.js
 import Link from 'next/link';
 import BlogData from 'data/Blog.json';
 import 'styles/blog.css';

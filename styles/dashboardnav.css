@@ -1,10 +1,10 @@
 .navbar {
     position: fixed;
     top: 0;
-    left: 240px; /* match sidebar width */
+    left: 240px; 
     height: 60px;
     right: 0;
-    background-color: #0f172a; /* dark blue */
+    background-color: #0f172a; 
     color: #fff;
     display: flex;
     align-items: center;

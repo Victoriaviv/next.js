@@ -4,7 +4,7 @@
     left: 0;
     height: 100vh;
     width: 240px;
-    background-color: #1e293b; /* dark slate */
+    background-color: #1e293b;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -18,7 +18,7 @@
     margin-bottom: 30px;
     text-align: center;
     font-weight: bold;
-    color: #38bdf8; /* light blue */
+    color: #38bdf8; 
   }
   
   .sidebar ul {

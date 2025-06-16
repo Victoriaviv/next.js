@@ -9,11 +9,7 @@ import axios from "axios";
 const DashboardSidebar = () => {
   const router = useRouter();
 
-  const handleLogout = async () => {
-    // Your logout logic
-    await axios.post("/api/logout");
-    router.push("/login"); // use router.push() instead of useNavigate
-  };
+ 
 
   return (
     <div className="sidebar">

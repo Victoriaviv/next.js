@@ -8,8 +8,8 @@ const DashboardNav = () => {
     <div className="navbar">
       <div className="logo">My Dashboard</div>
       <div className="nav-actions">
-        <button>Notifications</button>
-        <button>Profile</button>
+        {/* <button>Notifications</button>
+        <button>Profile</button> */}
       </div>
     </div>
   );
