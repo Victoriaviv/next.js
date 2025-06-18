@@ -1,21 +1,26 @@
 'use client';
 
 import { useState } from "react";
-import Register from "Components/Register";
-import Login from "Components/Login";
+import Register from "@/components/Auth/Register";
+import Login from "@/components/Auth/Login";
 
-const RegisterPage = () => {
-  const [showLogin, setShowLogin] = useState(false); 
+export default function RegisterPage() {
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <div>
       {showLogin ? (
-        <Login changeModal={() => {}} switchToRegister={() => setShowLogin(false)} />
+        <Login
+          changeModal={() => {}}
+          switchToRegister={() => setShowLogin(false)}
+        />
       ) : (
-        <Register changeModal={() => {}} switchToLogin={() => setShowLogin(true)} />
+        <Register
+          changeModal={() => {}}
+          switchToLogin={() => setShowLogin(true)}
+        />
       )}
-    </div>
-  );
-};
 
-export default RegisterPage;
+    </div>
+  )
+}

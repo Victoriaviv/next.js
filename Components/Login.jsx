@@ -25,38 +25,35 @@ const Login = ({ changeModal }) => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      console.log("Login API Response :", data);
       const { userEmail, userPassword } = data;
-  
+
+      // POST login, get token and user info
       const response = await axios.post(
         "http://localhost:5000/api/login",
-        { email: userEmail, password: userPassword },
-        { withCredentials: true }
+        { email: userEmail, password: userPassword }
+        // removed withCredentials here assuming token auth only
       );
-  
-      console.log("API responded with :", response.data);
+
       const { token, user } = response.data;
-      localStorage.setItem("userToken", token);
+
+      // Save token and user in localStorage using consistent keys
+      localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
-      
+
       if (user.role.toLowerCase() === "admin") {
         router.push("/dashboard/home");
       } else {
         router.push("/blog");
       }
-  
     } catch (error) {
-      console.error("Login error :", error);
-      const message = 
-        error.response?.data?.message ||
-        "Login failed. Check your credentials.";
+      console.error("Login error:", error);
+      const message =
+        error.response?.data?.message || "Login failed. Check your credentials.";
       Notify.failure(message);
     } finally {
       setLoading(false);
     }
   };
-  
-  
 
   return (
     <div className="formscontainer">
